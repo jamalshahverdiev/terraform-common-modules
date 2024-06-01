@@ -8,4 +8,5 @@ locals {
   realm_id      = var.realm_id
   login_theme   = var.login_theme
   extra_config  = var.extra_config
+  env           = var.env
 }
