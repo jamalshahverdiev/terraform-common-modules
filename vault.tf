@@ -1,5 +1,5 @@
 module "vault" {
-  source = "../../common-modules/vault"
+  source = "./vault"
 
   vault_mount_path = local.vault_mount_path
   services         = local.services
