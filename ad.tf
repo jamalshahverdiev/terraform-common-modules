@@ -1,5 +1,5 @@
 module "ad" {
-  source   = "../../common-modules/active-directory"
+  source   = "./active-directory"
   team     = "${local.team}-${local.service_name}"
   scope    = local.scope
   category = local.category
