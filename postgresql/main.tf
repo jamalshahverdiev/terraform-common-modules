@@ -50,6 +50,7 @@ data "vault_kv_secret_v2" "pg_credentials" {
 
 # Include Vault KV resource to store credentials
 resource "vault_kv_secret_v2" "postgresql_credentials" {
+  depends_on = [ data.vault_kv_secret_v2.pg_credentials ]
   mount     = var.vault_mount_path
   name      = var.vault_postgresql_key_path
   data_json = jsonencode({

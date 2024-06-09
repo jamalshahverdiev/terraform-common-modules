@@ -21,6 +21,7 @@ data "vault_kv_secret_v2" "mongo_credentials" {
 
 # Include Vault KV resource to store credentials
 resource "vault_kv_secret_v2" "mongodb_credentials" {
+  depends_on = [ data.vault_kv_secret_v2.mongo_credentials ]
   mount = var.vault_mount_path
   name  = var.vault_mongodb_key_path
   data_json = jsonencode({
