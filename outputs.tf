@@ -35,7 +35,3 @@ output "keycloak_client_secret" {
 output "ad_group_name" {
   value = module.ad.group_name
 }
-
-output "vault_paths" {
-  value = module.vault.vault_paths
-}
