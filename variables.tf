@@ -30,12 +30,6 @@ variable "services_secret_path" {
   default     = "services"
 }
 
-# variable "ad_path" {
-#   description = "Active Directory path"
-#   type        = string
-#   default     = "ad"
-# }
-
 variable "pg_path" {
   description = "PostgreSQL path"
   type        = string
@@ -115,22 +109,3 @@ variable "extra_config" {
     "key2" = "value2"
   }
 }
-
-# variable "postgres_enabled" {
-#   description = "Enable PostgreSQL module"
-#   type        = bool
-#   default     = false
-# }
-
-# variable "mongodb_enabled" {
-#   description = "Enable MongoDB module"
-#   type        = bool
-#   default     = false
-# }
-
-# variable "keycloak_enabled" {
-#   description = "Enable Keycloak module"
-#   type        = bool
-#   default     = false
-# }
-
