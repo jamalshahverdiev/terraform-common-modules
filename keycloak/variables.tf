@@ -28,3 +28,13 @@ variable "extra_config" {
   type        = map(string)
   default     = {}
 }
+
+variable "vault_mount_path" {
+  description = "Vault mount path"
+  type        = string
+}
+
+variable "vault_keycloak_key_path" {
+  description = "Path to the Vault key"
+  type        = string
+}
