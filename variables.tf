@@ -97,7 +97,7 @@ variable "vault_mount_path" {
 
 variable "services" {
   description = "Services configuration"
-  type        = map(any)
+  type        = any
   default    = {
     postgresql = {
       path     = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.pg_path}"
