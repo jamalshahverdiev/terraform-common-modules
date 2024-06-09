@@ -95,12 +95,18 @@ variable "vault_mount_path" {
   type        = string
 }
 
+locals {
+  postgresql_path = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.pg_path}"
+  mongodb_path    = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.mongo_path}"
+  keycloak_path   = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.keycloak_path}"
+}
+
 variable "services" {
   description = "Services configuration"
   type        = any
   default    = {
     postgresql = {
-      path     = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.pg_path}"
+      path     = local.postgresql_path
       username = module.postgresql.role_name
       password = module.postgresql.password
       database = module.postgresql.db_name
@@ -115,7 +121,7 @@ variable "services" {
       }
     }
     mongodb = {
-      path     = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.mongo_path}"
+      path     = local.mongodb_path
       username = module.mongodb.mongo_username
       password = module.mongodb.mongo_password
       database = module.mongodb.mongo_auth_db
@@ -130,7 +136,7 @@ variable "services" {
       }
     }
     keycloak = {
-      path          = "${var.account_id}/${var.region}/${var.env}/${var.path}/${var.services_secret_path}/${var.team}/${var.service_name}/${var.keycloak_path}"
+      path          = local.keycloak_path
       client_id     = module.keycloak.client_id
       client_secret = module.keycloak.client_secret
       data = {
