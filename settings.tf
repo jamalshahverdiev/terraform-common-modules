@@ -19,7 +19,10 @@ locals {
   vault_mount_path     = var.vault_mount_path
   vault_url            = var.vault_url
   keycloak_path        = var.keycloak_path
+  keycloak_enabled     = var.keycloak_enabled
   pg_path              = var.pg_path
+  postgres_enabled     = var.postgres_enabled
   mongo_path           = var.mongo_path
+  mongodb_enabled      = var.mongodb_enabled
   SERVICES_TOKEN       = var.SERVICES_TOKEN
 }

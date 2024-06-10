@@ -110,20 +110,38 @@ variable "realm_id" {
 variable "login_theme" {
   description = "Keycloak login theme"
   type        = string
-  default = "keycloak"
+  default     = "keycloak"
 }
 
 variable "extra_config" {
   description = "Extra configuration for Keycloak"
   type        = map(string)
-  default     = {
+  default = {
     "key1" = "value1"
     "key2" = "value2"
   }
 }
 
 variable "SERVICES_TOKEN" {
-  type = string
+  type        = string
   description = "value of the services token"
-  sensitive = true
+  sensitive   = true
+}
+
+variable "postgres_enabled" {
+  description = "Enable PostgreSQL"
+  type        = bool
+  default     = false
+}
+
+variable "mongodb_enabled" {
+  description = "Enable MongoDB"
+  type        = bool
+  default     = false
+}
+
+variable "keycloak_enabled" {
+  description = "Enable Keycloak"
+  type        = bool
+  default     = false
 }
