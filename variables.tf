@@ -24,6 +24,12 @@ variable "secret" {
   default     = "secret"
 }
 
+variable "ad_path" {
+  type        = string
+  description = "value of the ad path"
+  default     = "ad"
+}
+
 variable "services_secret_path" {
   description = "Services secret path"
   type        = string
@@ -84,6 +90,12 @@ variable "callback_url" {
   type        = string
 }
 
+variable "vault_url" {
+  description = "Vault URL"
+  type        = string
+  default     = "http://10.100.100.100:8200"
+}
+
 variable "vault_mount_path" {
   description = "Vault mount path"
   type        = string
@@ -108,4 +120,10 @@ variable "extra_config" {
     "key1" = "value1"
     "key2" = "value2"
   }
+}
+
+variable "SERVICES_TOKEN" {
+  type = string
+  description = "value of the services token"
+  sensitive = true
 }
