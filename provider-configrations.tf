@@ -28,7 +28,6 @@ provider "keycloak" {
   url       = data.vault_kv_secret_v2.keycloak_credentials.data["keycloak_url"]
 }
 
-
 provider "ad" {
   winrm_hostname = data.vault_kv_secret_v2.ad_credentials.data["winrm_hostname"]
   winrm_username = data.vault_kv_secret_v2.ad_credentials.data["winrm_username"]

@@ -145,3 +145,9 @@ variable "keycloak_enabled" {
   type        = bool
   default     = false
 }
+
+variable "ad_enabled" {
+  description = "Enable AD"
+  type        = bool
+  default     = false
+}

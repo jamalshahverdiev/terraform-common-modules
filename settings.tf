@@ -5,6 +5,7 @@ locals {
   category             = var.category
   ad_ou_dn             = var.ad_ou_dn
   ad_path              = var.ad_path
+  ad_enabled           = var.ad_enabled
   callback_url         = var.callback_url
   realm_id             = var.realm_id
   login_theme          = var.login_theme
