@@ -35,3 +35,19 @@ output "keycloak_client_secret" {
 output "ad_group_name" {
   value = local.ad_enabled ? module.ad[0].group_name : null
 }
+
+output "service_name" {
+  value = local.service_name
+}
+
+output "region" {
+  value = local.region
+}
+
+output "team" {
+  value = local.team
+}
+
+output "env" {
+  value = local.env
+}
